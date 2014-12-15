@@ -42,6 +42,7 @@ run_analysis <- function () {
     ## 2. Extracts only the measurements on the mean and standard deviation for each measurement.
     
     ## Find the columns with mean and std functions (We also want columns 1 and 2, the subject id and activity)
+    ## Keep parens using \\ (http://stackoverflow.com/questions/7992436/r-grep-pattern-regex-with-brackets)
     keep <- c(1, 2, grep("(mean|std)\\(\\)", names(all)))
     
     ## Reduce the data
@@ -55,7 +56,9 @@ run_analysis <- function () {
     names(activities) <- c("activity", "activityLabel") ## Add column names
     
     reduced <- merge(reduced, activities)  ## Merge them in
-    reduced$activity <- NULL ## Drop the activity column
+    
+    ## Drop the activity column (http://stackoverflow.com/questions/4605206/drop-columns-r-data-frame)
+    reduced$activity <- NULL
     
     ## 4. Appropriately labels the data set with descriptive variable names
     ## This has been mostly done above
@@ -65,5 +68,6 @@ run_analysis <- function () {
     names(reduced) <- gsub("\\(|\\)|\\-", "", names(reduced))
     
     ## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+    ## http://stackoverflow.com/questions/10787640/ddply-summarize-for-repeating-same-statistical-function-across-large-number-of
     tidy <- ddply(reduced, .(subject, activityLabel), numcolwise(mean))
 }
