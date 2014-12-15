@@ -1,6 +1,8 @@
 Getting And Cleaning Data Code Book
 ===================================
 
+For ease of reading, all column names are in camel case.
+
 ## subject
 The subject ID.
 

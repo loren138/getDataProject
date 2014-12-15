@@ -9,6 +9,6 @@ The script run\_analysis.R creates the function run\_analysis() which does the f
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-The data from step 5 will be returned as the result from the function call.
+The data from step 5 will be returned as the result from the function call.  (For ease of reading, all column names are in camel case.)
 
 The function expects that the data folder (UCI HAR Dataset) is in the working directory.
