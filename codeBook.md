@@ -4,7 +4,7 @@ Getting And Cleaning Data Code Book
 For ease of reading, all column names are in camel case.
 
 ## subject
-The subject ID.
+The subject ID. (Range 1-30)
 
 ## activityLabel
 The activity label. (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, or LAYING)
@@ -32,6 +32,8 @@ The set of variables that were estimated from these signals are Mean and Std (St
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 gravityMean, tBodyAccMean, tBodyAccJerkMean, tBodyGyroMean, tBodyGyroJerkMean
+
+**The columns are all in the normalized range of [-1, 1] and are decimal values.**
 
 The available columns are:
 
